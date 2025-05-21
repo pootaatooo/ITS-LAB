@@ -30,3 +30,49 @@
 
  <p>일곱 난쟁이의 키를 오름차순으로 출력한다. 일곱 난쟁이를 찾을 수 없는 경우는 없다.</p>
 
+## 풀이 코드
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    
+    int tall[9] = {0,};
+    int nan[7] = {0,};
+    int sum = 0, h = 0;
+    
+    for(int i=0;i<9;i++) {
+        cin >> tall[i];
+        
+        sum += tall[i];
+    }
+    
+    for(int i=0;i<8;i++) {
+        
+        for(int j=i+1;j<9;j++) {
+            
+            if(sum - tall[i] - tall[j] == 100) {
+                
+                for(int k=0;k<9;k++) {
+                    
+                    if(k != i && k != j)
+                        nan[h++] = tall[k];
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    sort(nan, nan+7);
+
+    
+    for(int i=0;i<7;i++) {
+        cout << nan[i] << endl;
+    }
+    
+    
+    
+}
