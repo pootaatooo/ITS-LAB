@@ -36,3 +36,47 @@
 
  <p>첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.</p>
 
+
+## 풀이 코드
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    
+    int arr[n] = {0,};
+    int sum, result = 0;
+    
+    for(int i=0;i<n;i++) {
+        cin >> arr[i];
+    }
+    
+    // for(int i=0;i<n;i++) {
+    //     cout << arr[i] << '\n';
+    // }
+    
+    for(int i=0;i<n-2;i++) {
+        
+        for(int j=i+1;j<n-1;j++) {
+            
+            for(int k=j+1;k<n;k++) {
+                
+                sum = arr[i] + arr[j] + arr[k];
+                
+                if(result < sum && sum <= m) {
+                    result = sum;
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    cout << result << endl;
+    
+    
+    
+}
