@@ -30,3 +30,19 @@
 
  <p>그가 「<strong>진짜</strong>」이면 <em>gosu</em>, 「<strong>가짜</strong>」이면 <em>hasu</em>를 출력한다.</p>
 
+
+## 풀이 코드
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int k, d, a;
+    scanf("%d/%d/%d", &k, &d, &a);
+        
+    if(k + a < d || d == 0)
+        cout << "hasu";
+    else
+        cout << "gosu";
+    
+}
