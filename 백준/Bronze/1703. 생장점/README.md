@@ -42,3 +42,32 @@
 
  <p>각 나무에 대하여 나무에 달려있는 잎의 수를 한 줄씩 출력하세요. 나뭇잎의 수가 signed 32-bit integer를 초과하지 않는다고 가정해도 좋습니다.</p>
 
+
+## 풀이 코드
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    
+    while(1) {
+        int a;
+        cin >> a;
+        
+        if(a == 0)
+            break;
+        
+        int result = 1;
+        
+        for(int i=0;i<a;i++) {
+            int b, c;
+            cin >> b >> c;
+        
+            result *= b;
+            result -= c;
+        }
+        cout << result << '\n';
+    }
+
+    
+}
